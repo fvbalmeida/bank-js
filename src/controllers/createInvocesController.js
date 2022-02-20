@@ -5,7 +5,7 @@ const customers = require('../models/customersModel');
 
 async function createInvoice() {
     try {
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 10; i++) {
 
             let randomAmount = Math.floor(Math.random() * 15000) + 1000;
             let randomNumber = Math.floor(Math.random() * 10);
