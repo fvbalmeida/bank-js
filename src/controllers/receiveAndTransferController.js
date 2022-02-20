@@ -11,14 +11,10 @@ async function receiveAndTransfer(req, res) {
         });
 
         if (event.log.type === 'paid') {
-            console.log('type ', event.log.type);
 
             let paidInvoiceAmount = event.log.invoice.amount;
-            idd = event.log.invoice.id
-            console.log('id ', idd)
 
             await createTransferController.createTransfer(paidInvoiceAmount);
-            console.log(`conta ${idd} paga`)
 
         }
         res.status(200).json({ success: true }).end()
